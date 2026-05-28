@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(-1.5deg); }
+  50%       { transform: translateY(-20px) rotate(1.5deg); }
+}
+@keyframes shadow-pulse {
+  0%, 100% { transform: scaleX(1);    opacity: 0.25; }
+  50%       { transform: scaleX(0.78); opacity: 0.12; }
+}
+@keyframes tail-wag {
+  0%, 100% { transform: rotate(0deg);  }
+  25%      { transform: rotate(14deg); }
+  75%      { transform: rotate(-10deg);}
+}
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0);  }
+  50%       { transform: translateY(6px);}
+}
+
+.animate-float        { animation: float         3.8s ease-in-out infinite; }
+.animate-shadow-pulse { animation: shadow-pulse  3.8s ease-in-out infinite; }
+.animate-tail-wag     { animation: tail-wag      1.8s ease-in-out infinite; }
+.animate-bounce-arrow { animation: bounce-arrow  2.2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-shadow-pulse,
+  .animate-tail-wag,
+  .animate-bounce-arrow { animation: none; }
+}
