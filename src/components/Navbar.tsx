@@ -1,27 +1,32 @@
-import { useState } from 'react';
-import { Link } from 'react-scroll';
+import { useState } from "react";
+import { Link } from "react-scroll";
+import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
+import { useT, useLang } from "../context/LanguageContext";
 
 interface NavbarProps {
   darkMode: boolean;
   toggleDark: () => void;
 }
 
-const NAV_LINKS = [
-  { label: 'About',    to: 'about'    },
-  { label: 'Skills',   to: 'skills'   },
-  { label: 'Projects', to: 'projects' },
-  { label: 'Contact',  to: 'contact'  },
-];
-
 export default function Navbar({ darkMode, toggleDark }: NavbarProps) {
   const [open, setOpen] = useState(false);
+  const t = useT();
+  const { lang, toggleLang } = useLang();
+
+  const NAV_LINKS = [
+    { label: t.nav.about, to: "about" },
+    { label: t.nav.skills, to: "skills" },
+    { label: t.nav.projects, to: "projects" },
+    { label: t.nav.contact, to: "contact" },
+  ];
 
   return (
     <nav className="sticky top-0 z-50 bg-warm-base/90 dark:bg-dark-base/90 backdrop-blur-md border-b border-warm-border dark:border-orange-900/30">
       <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-16">
-
         {/* Logo */}
-        <span className="font-black text-lg text-orange-600 tracking-tight">Li Svensson</span>
+        <span className="font-black text-lg text-orange-600 tracking-tight">
+          LS
+        </span>
 
         {/* Desktop links */}
         <ul className="hidden md:flex gap-8">
@@ -44,24 +49,40 @@ export default function Navbar({ darkMode, toggleDark }: NavbarProps) {
 
         {/* Right side */}
         <div className="flex items-center gap-3">
+          {/* Language toggle */}
+          <button
+            onClick={toggleLang}
+            className="px-3 py-1.5 rounded-full bg-orange-50 dark:bg-orange-950 border border-orange-200 dark:border-orange-800 text-orange-700 dark:text-orange-300 hover:bg-orange-100 dark:hover:bg-orange-900 transition-colors text-xs font-bold"
+            aria-label="Toggle language"
+          >
+            {lang === "en" ? "SV" : "EN"}
+          </button>
+
+          {/* Dark mode toggle */}
           <button
             onClick={toggleDark}
-            className="text-xs font-semibold px-3 py-1.5 rounded-full bg-orange-50 dark:bg-orange-950 border border-orange-200 dark:border-orange-800 text-orange-700 dark:text-orange-300 hover:bg-orange-100 dark:hover:bg-orange-900 transition-colors"
+            className="p-2 rounded-full bg-orange-50 dark:bg-orange-950 border border-orange-200 dark:border-orange-800 text-orange-700 dark:text-orange-300 hover:bg-orange-100 dark:hover:bg-orange-900 transition-colors"
             aria-label="Toggle dark mode"
           >
-            {darkMode ? '☀️ Light' : '🌙 Dark'}
+            {darkMode ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
           </button>
 
           {/* Hamburger */}
           <button
             className="md:hidden flex flex-col gap-1.5 p-1"
-            onClick={() => setOpen(v => !v)}
+            onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
           >
-            <span className={`block w-5 h-0.5 bg-orange-800 dark:bg-orange-300 transition-transform duration-200 ${open ? 'translate-y-2 rotate-45' : ''}`} />
-            <span className={`block w-5 h-0.5 bg-orange-800 dark:bg-orange-300 transition-opacity duration-200 ${open ? 'opacity-0' : ''}`} />
-            <span className={`block w-5 h-0.5 bg-orange-800 dark:bg-orange-300 transition-transform duration-200 ${open ? '-translate-y-2 -rotate-45' : ''}`} />
+            <span
+              className={`block w-5 h-0.5 bg-orange-800 dark:bg-orange-300 transition-transform duration-200 ${open ? "translate-y-2 rotate-45" : ""}`}
+            />
+            <span
+              className={`block w-5 h-0.5 bg-orange-800 dark:bg-orange-300 transition-opacity duration-200 ${open ? "opacity-0" : ""}`}
+            />
+            <span
+              className={`block w-5 h-0.5 bg-orange-800 dark:bg-orange-300 transition-transform duration-200 ${open ? "-translate-y-2 -rotate-45" : ""}`}
+            />
           </button>
         </div>
       </div>
