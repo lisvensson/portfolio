@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-scroll";
+import { Link, scroller, animateScroll } from "react-scroll";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 import { useT, useLang } from "../context/LanguageContext";
 
@@ -24,9 +24,17 @@ export default function Navbar({ darkMode, toggleDark }: NavbarProps) {
     <nav className="sticky top-0 z-50 bg-warm-base/90 dark:bg-dark-base/90 backdrop-blur-md border-b border-warm-border dark:border-orange-900/30">
       <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <span className="font-black text-lg text-orange-600 tracking-tight">
+        <button
+          className="font-black text-lg text-orange-600 tracking-tight cursor-pointer"
+          onClick={() => {
+            setOpen(false);
+            setTimeout(() => {
+              animateScroll.scrollToTop({ smooth: true, duration: 600 });
+            }, 10);
+          }}
+        >
           LS
-        </span>
+        </button>
 
         {/* Desktop links */}
         <ul className="hidden md:flex gap-8">
@@ -52,10 +60,12 @@ export default function Navbar({ darkMode, toggleDark }: NavbarProps) {
           {/* Language toggle */}
           <button
             onClick={toggleLang}
-            className="px-3 py-1.5 rounded-full bg-orange-50 dark:bg-orange-950 border border-orange-200 dark:border-orange-800 text-orange-700 dark:text-orange-300 hover:bg-orange-100 dark:hover:bg-orange-900 transition-colors text-xs font-bold"
+            className="p-2 rounded-full bg-orange-50 dark:bg-orange-950 border border-orange-200 dark:border-orange-800 text-orange-700 dark:text-orange-300 hover:bg-orange-100 dark:hover:bg-orange-900 transition-colors"
             aria-label="Toggle language"
           >
-            {lang === "en" ? "SV" : "EN"}
+            <span className="flex items-center justify-center w-5 h-5 text-xs font-bold leading-none">
+              {lang === "en" ? "SV" : "EN"}
+            </span>
           </button>
 
           {/* Dark mode toggle */}
@@ -64,7 +74,11 @@ export default function Navbar({ darkMode, toggleDark }: NavbarProps) {
             className="p-2 rounded-full bg-orange-50 dark:bg-orange-950 border border-orange-200 dark:border-orange-800 text-orange-700 dark:text-orange-300 hover:bg-orange-100 dark:hover:bg-orange-900 transition-colors"
             aria-label="Toggle dark mode"
           >
-            {darkMode ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
+            {darkMode ? (
+              <SunIcon className="w-5 h-5" />
+            ) : (
+              <MoonIcon className="w-5 h-5" />
+            )}
           </button>
 
           {/* Hamburger */}
@@ -93,16 +107,21 @@ export default function Navbar({ darkMode, toggleDark }: NavbarProps) {
           <ul className="flex flex-col gap-4 pt-4">
             {NAV_LINKS.map(({ label, to }) => (
               <li key={to}>
-                <Link
-                  to={to}
-                  smooth
-                  duration={600}
-                  offset={-64}
+                <button
                   className="text-sm font-medium text-orange-900 dark:text-orange-200 cursor-pointer hover:text-orange-600"
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    setOpen(false);
+                    setTimeout(() => {
+                      scroller.scrollTo(to, {
+                        smooth: true,
+                        duration: 600,
+                        offset: -64,
+                      });
+                    }, 10);
+                  }}
                 >
                   {label}
-                </Link>
+                </button>
               </li>
             ))}
           </ul>
