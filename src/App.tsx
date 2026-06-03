@@ -19,7 +19,7 @@ function AppShell({
     <div className="bg-warm-base dark:bg-dark-base text-warm-dark dark:text-orange-100 transition-colors duration-300">
       <Navbar darkMode={darkMode} toggleDark={toggleDark} />
       <main>
-        <Hero />
+        <Hero darkMode={darkMode} />
         <About />
         <Skills />
         <Projects />
