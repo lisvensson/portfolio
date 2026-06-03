@@ -1,19 +1,46 @@
+export type SkillCategoryKey = "frontend" | "backend" | "other";
+
 export interface SkillCategory {
-  title: string;
+  key: SkillCategoryKey;
   skills: string[];
 }
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: 'Frontend',
-    skills: ['React', 'TypeScript', 'Tailwind CSS', 'HTML & CSS', 'Vite'],
+    key: "frontend",
+    skills: [
+      "React",
+      "React Router v7",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "HTML/CSS",
+    ],
   },
   {
-    title: 'Backend',
-    skills: ['Node.js', 'Express', 'PostgreSQL', 'REST APIs'],
+    key: "backend",
+    skills: [
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "MongoDB",
+      "MySQL",
+      "REST APIs",
+    ],
   },
   {
-    title: 'Other',
-    skills: ['Git & GitHub', 'Docker', 'Figma'],
+    key: "other",
+    skills: [
+      "Git/GitHub",
+      "Docker",
+      "Figma",
+      "Render",
+      "Railway",
+      "Neon",
+      "Better Auth",
+      "Resend",
+    ],
   },
 ];
