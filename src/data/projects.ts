@@ -1,9 +1,7 @@
 export interface ProjectItem {
   id: string;
-  category: string;
   name: string;
   tech: string[];
-  description: string;
   liveUrl: string;
   githubUrl: string;
   imageAlt: string;
@@ -11,25 +9,26 @@ export interface ProjectItem {
 
 export const projects: ProjectItem[] = [
   {
-    id: 'taskflow',
-    category: 'School Project',
-    name: 'TaskFlow App',
-    tech: ['React', 'Node.js', 'MongoDB'],
-    description:
-      'A full-stack task management app with real-time updates, drag-and-drop boards, and user authentication.',
-    liveUrl: '#',      // replace with real URL
-    githubUrl: '#',    // replace with real GitHub URL
-    imageAlt: 'TaskFlow App screenshot',
+    id: "relocations",
+    name: "Relocation Streams App",
+    tech: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "shadcn/ui",
+    ],
+    liveUrl: "#",
+    githubUrl: "https://github.com/lisvensson/relocation-streams",
+    imageAlt: "Relocation Streams App screenshot",
   },
   {
-    id: 'weather',
-    category: 'Side Project',
-    name: 'Weather Dashboard',
-    tech: ['TypeScript', 'Tailwind CSS', 'OpenWeather API'],
-    description:
-      'Clean weather dashboard with 5-day forecast, location search, and a dark/light mode toggle.',
-    liveUrl: '#',
-    githubUrl: '#',
-    imageAlt: 'Weather Dashboard screenshot',
+    id: "planago",
+    name: "Planago App",
+    tech: ["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/lisvensson/planago",
+    imageAlt: "Planago App screenshot",
   },
 ];
