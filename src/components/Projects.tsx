@@ -46,14 +46,20 @@ export default function Projects() {
                     {item.description}
                   </p>
                   <div className="flex gap-2">
-                    <a
-                      href={project.liveUrl}
-                      className="text-xs font-bold px-3 py-1.5 bg-orange-600 hover:bg-orange-500 text-white rounded-lg transition-colors duration-150"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {t.projects.liveDemo}
-                    </a>
+                    {project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        className="text-xs font-bold px-3 py-1.5 bg-orange-600 hover:bg-orange-500 text-white rounded-lg transition-colors duration-150"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t.projects.liveDemo}
+                      </a>
+                    ) : (
+                      <span className="text-xs font-bold px-3 py-1.5 bg-orange-200 dark:bg-orange-900/40 text-orange-400 dark:text-orange-600 rounded-lg cursor-not-allowed select-none">
+                        {t.projects.liveDemo}
+                      </span>
+                    )}
                     <a
                       href={project.githubUrl}
                       className="text-xs font-bold px-3 py-1.5 border border-warm-border dark:border-orange-800 text-orange-800 dark:text-orange-300 hover:bg-orange-50 dark:hover:bg-orange-950 rounded-lg transition-colors duration-150"

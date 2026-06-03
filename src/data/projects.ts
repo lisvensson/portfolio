@@ -2,7 +2,7 @@ export interface ProjectItem {
   id: string;
   name: string;
   tech: string[];
-  liveUrl: string;
+  liveUrl?: string;
   githubUrl: string;
   imageAlt: string;
 }
@@ -19,7 +19,7 @@ export const projects: ProjectItem[] = [
       "Tailwind CSS",
       "shadcn/ui",
     ],
-    liveUrl: "#",
+    //liveUrl: "#",
     githubUrl: "https://github.com/lisvensson/relocation-streams",
     imageAlt: "Relocation Streams App screenshot",
   },
@@ -27,7 +27,7 @@ export const projects: ProjectItem[] = [
     id: "planago",
     name: "Planago App",
     tech: ["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
-    liveUrl: "#",
+    //liveUrl: "#",
     githubUrl: "https://github.com/lisvensson/planago",
     imageAlt: "Planago App screenshot",
   },
