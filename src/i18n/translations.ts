@@ -1,8 +1,14 @@
-export type Lang = 'en' | 'sv';
+export type Lang = "en" | "sv";
 
 export interface Translations {
   nav: { about: string; skills: string; projects: string; contact: string };
-  hero: { role: string; greetingPrefix: string; tagline: string; dogCaption: string; cta: string };
+  hero: {
+    role: string;
+    greetingPrefix: string;
+    tagline: string;
+    dogCaption: string;
+    cta: string;
+  };
   about: { badge: string; heading: string; p1: string; p2: string; p3: string };
   skills: {
     badge: string;
@@ -23,105 +29,107 @@ export interface Translations {
 export const translations: Record<Lang, Translations> = {
   en: {
     nav: {
-      about: 'About',
-      skills: 'Skills',
-      projects: 'Projects',
-      contact: 'Contact',
+      about: "About",
+      skills: "Skills",
+      projects: "Projects",
+      contact: "Contact",
     },
     hero: {
-      role: 'Full Stack Developer',
+      role: "Full Stack Developer",
       greetingPrefix: "Hi, I'm ",
-      tagline: 'I build clean, fast, and modern web experiences.',
-      dogCaption: '& yes, that floating cutie is my shiba Mango.',
-      cta: 'View my projects ↓',
+      tagline: "I build clear, modern and user‑friendly web experiences.",
+      dogCaption: "& yes, that floating cutie is my shiba, Mango.",
+      cta: "Explore my work ↓",
     },
     about: {
-      badge: 'About me',
-      heading: 'Nice to meet you!',
-      p1: "Hi! I'm Li — a full stack developer based in Sweden with a love for building things that are both beautiful and functional.",
-      p2: "I'm currently studying Computer Science and always working on something new. When I'm not coding, you'll find me on walks with Mango or deep in a new side project.",
-      p3: 'I care a lot about clean code, great UX, and making the web a little more delightful.',
+      badge: "About me",
+      heading: "Nice to meet you!",
+      p1: "Hi, and thanks for stopping by! I'm Li – a newly graduated full stack developer, ready for my first role in the industry.",
+      p2: "I'm structured, detail‑oriented and enjoy working with both frontend and backend. During my studies and internship I discovered how much I like taking an idea from data and logic all the way to a clear, user‑friendly interface.",
+      p3: "Outside of coding, I enjoy training, spending time in nature, hiking with my shiba Mango and spending time with friends and family.",
     },
     skills: {
-      badge: 'Skills',
-      heading: 'What I work with',
-      categories: { frontend: 'Frontend', backend: 'Backend', other: 'Other' },
+      badge: "Skills",
+      heading: "What I work with",
+      categories: { frontend: "Frontend", backend: "Backend", other: "Other" },
     },
     projects: {
-      badge: 'Projects',
+      badge: "Projects",
       heading: "Things I've built",
-      liveDemo: 'Live demo →',
-      github: 'GitHub',
+      liveDemo: "Live demo →",
+      github: "GitHub",
       items: {
-        taskflow: {
-          category: 'School Project',
+        relocations: {
+          category: "LIA Project",
           description:
-            'A full-stack task management app with real-time updates, drag-and-drop boards, and user authentication.',
+            "A data‑driven analytics tool built during my internship at Booiq. Users can explore and visualize company relocations across Sweden through filters, interactive charts and shareable report snapshots. I worked across the stack with React, TypeScript, PostgreSQL and data modeling.",
         },
-        weather: {
-          category: 'Side Project',
+        planago: {
+          category: "School Project",
           description:
-            'Clean weather dashboard with 5-day forecast, location search, and a dark/light mode toggle.',
+            "A travel planning app built as my final exam project. It helps users generate simple day plans based on location, interests and time of day. I focused on a clean UI, clear flows and a modern React architecture.",
         },
       },
     },
     contact: {
-      badge: 'Contact',
+      badge: "Contact",
       heading: "Let's connect!",
       subtext:
         "Open to new opportunities, collaborations, and friendly conversations. Don't be a stranger!",
     },
-    footer: '© 2026 Li Svensson — Built with React, TypeScript & Tailwind CSS',
+    footer: "© 2026 Li Svensson — Built with React, TypeScript & Tailwind CSS",
   },
   sv: {
     nav: {
-      about: 'Om mig',
-      skills: 'Kompetenser',
-      projects: 'Projekt',
-      contact: 'Kontakt',
+      about: "Om mig",
+      skills: "Kompetenser",
+      projects: "Projekt",
+      contact: "Kontakt",
     },
     hero: {
-      role: 'Fullstackutvecklare',
-      greetingPrefix: 'Hej, jag är ',
-      tagline: 'Jag bygger snygga, snabba och moderna webbupplevelser.',
-      dogCaption: '& ja, den flytande sötisen är min shiba Mango.',
-      cta: 'Se mina projekt ↓',
+      role: "Fullstackutvecklare",
+      greetingPrefix: "Hej, jag är ",
+      tagline:
+        "Jag bygger tydliga, moderna och användarvänliga webbupplevelser.",
+      dogCaption: "& ja, den flytande sötisen är min shiba, Mango.",
+      cta: "Utforska mina projekt ↓",
     },
     about: {
-      badge: 'Om mig',
-      heading: 'Trevligt att träffas!',
-      p1: 'Hej! Jag är Li — en fullstackutvecklare baserad i Sverige med en kärlek för att bygga saker som är både vackra och funktionella.',
-      p2: 'Jag studerar just nu datavetenskap och jobbar alltid på något nytt. När jag inte kodar hittar du mig på promenader med Mango eller fördjupad i ett nytt sidoprojekt.',
-      p3: 'Jag bryr mig mycket om ren kod, bra UX och att göra webben lite roligare.',
+      badge: "Om mig",
+      heading: "Trevligt att träffas!",
+      p1: "Hej, vad roligt att du hittat hit! Jag är Li – en nyexaminerad fullstackutvecklare som är redo för mitt första jobb i branschen.",
+      p2: "Jag är strukturerad, noggrann och tycker om att arbeta med både frontend och backend. Under utbildningen och min LIA upptäckte jag hur mycket jag trivs med att ta en idé från data och logik hela vägen till ett tydligt och användarvänligt gränssnitt.",
+      p3: "På fritiden tränar jag gärna, är ute i naturen, vandrar med min shiba Mango och umgås med vänner och familj.",
     },
     skills: {
-      badge: 'Kompetenser',
-      heading: 'Vad jag jobbar med',
-      categories: { frontend: 'Frontend', backend: 'Backend', other: 'Övrigt' },
+      badge: "Kompetenser",
+      heading: "Vad jag jobbar med",
+      categories: { frontend: "Frontend", backend: "Backend", other: "Övrigt" },
     },
     projects: {
-      badge: 'Projekt',
-      heading: 'Saker jag har byggt',
-      liveDemo: 'Se live →',
-      github: 'GitHub',
+      badge: "Projekt",
+      heading: "Saker jag har byggt",
+      liveDemo: "Se live →",
+      github: "GitHub",
       items: {
-        taskflow: {
-          category: 'Skolprojekt',
+        relocations: {
+          category: "LIA-projekt",
           description:
-            'En fullstack-uppgiftshanteringsapp med realtidsuppdateringar, dra-och-släpp-tavlor och användarautentisering.',
+            "Ett datadrivet analysverktyg som jag byggde under min LIA på Booiq. Användare kan utforska och visualisera företagsflyttar i Sverige genom filtrering, interaktiva diagram och delningsbara rapportsnapshots. Jag arbetade i hela stacken med React, TypeScript, PostgreSQL och datamodellering.",
         },
-        weather: {
-          category: 'Sidoprojekt',
+        planago: {
+          category: "Skolprojekt",
           description:
-            'En snygg väderdashboard med 5-dagarsprognos, platssökning och växling mellan mörkt och ljust läge.',
+            "En reseplanerare som jag byggde som mitt examensarbete. Appen hjälper användare att skapa enkla dagsplaner baserat på plats, intressen och tid på dagen. Jag fokuserade på ett rent gränssnitt, tydliga flöden och en modern React‑arkitektur.",
         },
       },
     },
     contact: {
-      badge: 'Kontakt',
-      heading: 'Låt oss hålla kontakt!',
-      subtext: 'Öppen för nya möjligheter, samarbeten och trevliga samtal. Hör gärna av dig!',
+      badge: "Kontakt",
+      heading: "Låt oss hålla kontakt!",
+      subtext:
+        "Öppen för nya möjligheter, samarbeten och trevliga samtal. Hör gärna av dig!",
     },
-    footer: '© 2026 Li Svensson — Byggd med React, TypeScript & Tailwind CSS',
+    footer: "© 2026 Li Svensson — Byggd med React, TypeScript & Tailwind CSS",
   },
 };
