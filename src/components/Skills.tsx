@@ -4,7 +4,7 @@ import { useT } from '../context/LanguageContext';
 export default function Skills() {
   const t = useT();
   return (
-    <section id="skills" className="py-20 px-6 bg-orange-50 dark:bg-dark-muted">
+    <section id="skills" className="py-20 px-6 bg-warm-muted dark:bg-dark-muted">
       <div className="max-w-4xl mx-auto">
 
         <span className="inline-block text-[11px] font-bold tracking-[0.2em] uppercase text-orange-600 bg-white dark:bg-dark-base border border-orange-200 dark:border-orange-800 rounded-full px-3 py-1 mb-3">
