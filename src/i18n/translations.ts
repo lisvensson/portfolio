@@ -38,7 +38,7 @@ export const translations: Record<Lang, Translations> = {
       role: "Full Stack Developer",
       greetingPrefix: "Hi, I'm ",
       tagline: "I build clear, modern and user‑friendly web experiences.",
-      dogCaption: "& yes, that floating cutie is my shiba, Mango.",
+      dogCaption: "& yes, the cute dog is my shiba, Mango.",
       cta: "Explore my work ↓",
     },
     about: {
@@ -91,7 +91,7 @@ export const translations: Record<Lang, Translations> = {
       greetingPrefix: "Hej, jag är ",
       tagline:
         "Jag bygger tydliga, moderna och användarvänliga webbupplevelser.",
-      dogCaption: "& ja, den flytande sötisen är min shiba, Mango.",
+      dogCaption: "& ja, den söta hunden är min shiba, Mango.",
       cta: "Utforska mina projekt ↓",
     },
     about: {
