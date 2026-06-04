@@ -25,11 +25,22 @@ export default function Projects() {
               >
                 {/* Screenshot placeholder */}
                 <div
-                  className="h-36 flex items-center justify-center text-sm font-semibold tracking-wider text-orange-700"
-                  style={{ background: 'linear-gradient(135deg, #fde68a, #fb923c)' }}
+                  className="h-36 relative flex items-center justify-center overflow-hidden"
+                  style={{
+                    background: 'linear-gradient(135deg, #f2e3cf 0%, #e5c49a 50%, #c47a35 100%)',
+                  }}
                   aria-label={project.imageAlt}
                 >
-                  [ Screenshot ]
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      backgroundImage: 'radial-gradient(circle, rgba(196,122,53,0.15) 1.2px, transparent 1.2px)',
+                      backgroundSize: '20px 20px',
+                    }}
+                  />
+                  <span className="relative text-[11px] font-bold tracking-[0.15em] uppercase text-orange-900/70">
+                    {project.name}
+                  </span>
                 </div>
 
                 <div className="p-5">
