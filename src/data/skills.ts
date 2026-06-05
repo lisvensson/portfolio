@@ -35,12 +35,12 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       "Git/GitHub",
       "Docker",
+      "WordPress",
       "Figma",
       "Render",
       "Railway",
       "Neon",
       "Better Auth",
-      "Resend",
     ],
   },
 ];
